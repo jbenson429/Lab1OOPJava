@@ -1,8 +1,7 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Purse {
-    Map<Denomination, Integer> cash = new HashMap<>();
+    private final Map<Denomination, Integer> cash = new HashMap<>();
 
     public void add(Denomination type, int num) {
         cash.put(type, cash.getOrDefault(type, 0) + num);
@@ -25,6 +24,10 @@ public class Purse {
                 .sum();
     }
 
+    public Map<Denomination, Integer> getCash() { // Added Getter
+        return cash;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Purse contents:\n");
@@ -34,5 +37,3 @@ public class Purse {
         return sb.toString();
     }
 }
-
-

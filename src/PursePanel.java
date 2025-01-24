@@ -1,6 +1,6 @@
-// PursePanel class
 import javax.swing.*;
 import java.awt.*;
+import java.util.Map;
 
 class PursePanel extends JPanel {
     private Purse purse = new Purse();
@@ -17,7 +17,7 @@ class PursePanel extends JPanel {
 
         int x = 10;
         int y = 20;
-        for (Map.Entry<Denomination, Integer> entry : purse.cash.entrySet()) {
+        for (Map.Entry<Denomination, Integer> entry : purse.getCash().entrySet()) { // Use getter here
             String text = entry.getValue() + " " + entry.getKey().name();
             g.drawString(text, x, y);
             y += 20;

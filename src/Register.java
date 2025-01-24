@@ -1,6 +1,6 @@
 public class Register {
-
     private static final Denomination[] DENOMINATIONS = {
+            new Denomination("Hundred-Dollar Note", 100.0, "bill", "hundred_dollar.png"),
             new Denomination("Fifty-Dollar Note", 50.0, "bill", "fifty_dollar.png"),
             new Denomination("Ten-Dollar Note", 10.0, "bill", "ten_dollar.png"),
             new Denomination("Five-Dollar Note", 5.0, "bill", "five_dollar.png"),
@@ -28,22 +28,9 @@ public class Register {
     }
 
     public static void main(String[] args) {
-        Register register = new Register();
-
-        // Test cases
-        System.out.println(register.makeChange(0));
-        System.out.println(register.makeChange(1.25));
-        System.out.println(register.makeChange(0.00001));
-        System.out.println(register.makeChange(0.005));
-        System.out.println(register.makeChange(-5.45));
-        System.out.println(register.makeChange(69.89));
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            MakingChange app = new MakingChange();
+            app.createAndShowGUI();
+        });
     }
-
-
-
-
 }
-
-
-
-
